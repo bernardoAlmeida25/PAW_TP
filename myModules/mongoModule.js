@@ -4,31 +4,29 @@ const database_obj = {
     dbName:'MedCare'
 }
 
-function addDocumento(collection, document){
+function addDocumento(collectionName, document, callback){
 	client.connect(database_obj.mongo_url, function(err, db){
 		if(err){
 			console.log("Erro de Conexão");
 		}else{
 			const myDB = db.db(database_obj.dbName);
-			const collection = myDB.collection(collection);
+			const collection = myDB.collection(collectionName);
 
 			collection.insertOne(document, (err, r) => {
-				if(!err){
-					console.log("Doente adicionado com sucesso");
-				}
+				callback(err);
 			});
 			db.close();
 		}
 	});
 }
 
-function findSomething(collection, query){
+function findSomething(collectionName, query){
 	client.connect(database_obj.mongo_url, function(err, db){
 		if(err){
 			console.log("Erro de Conexão");
 		}else{
 			const myDB = db.db(database_obj.dbName);
-			const collection = myDB.collection(collection);
+			const collection = myDB.collection(collectionName);
 			let DBquery = query;
 			collection.find(DBquery, (err, r) => {
 				if(!err){
@@ -40,13 +38,13 @@ function findSomething(collection, query){
 	});
 }
 
-function updateSomething(collection, query, newValues){
+function updateSomething(collectionName, query, newValues){
 	client.connect(database_obj.mongo_url, function(err, db){
 		if(err){
 			console.log("Erro de Conexão");
 		}else{
 			const myDB = db.db(database_obj.dbName);
-			const collection = myDB.collection(collection);
+			const collection = myDB.collection(collectionName);
 			let queryDB = query; 
 			collection.updateOne(query, newValues, function(err, res){
 				if(!err){
@@ -58,13 +56,13 @@ function updateSomething(collection, query, newValues){
 	});
 }
 
-function deleteDocument(collection, document, query){
+function deleteDocument(collectionName, document, query){
 	client.connect(database_obj.mongo_url, function(){
 		if(err){
 			console.log("Erro de Conexão");
 		}else{
 			const myDB = db.db(database_obj.dbName);
-			const collection = myDB.collection(collection);
+			const collection = myDB.collection(collectionName);
 			let queryDB = query;
 			collection.deleteOne(query, function(err, obj){
 				if(!err){

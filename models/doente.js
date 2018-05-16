@@ -1,3 +1,5 @@
+const mongoModule = require('../myModule/mongoModule');
+
 class Doente{
 	constructor(nome, idade, genero, morada, dataEntrada, nProcesso){
 		this._nome = nome;
@@ -31,4 +33,19 @@ class Doente{
 	get nProcesso(){
 		return this._nProcesso;
 	}
+
+
+
+	//FAZER CRUD AQUI!!!!
+	//MODELO É QUE INTERAJE COM A BD
+
+	static addDoente(doente, callback){
+		mongoModule.addDocumento('doente', doente, (err) =>{
+			callback(err);
+		});
+	}
+}
+
+module.exports = {
+	Doente : Doente;
 }
