@@ -1,5 +1,5 @@
-class Funcionario{
-	constructor(nome,codigo, password){
+class Funcionario {
+	constructor(nome, password, codigo) {
 		this._nome = nome;
 		this._codigo = codigo;
 		this._password = password;
