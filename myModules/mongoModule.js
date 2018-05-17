@@ -4,17 +4,33 @@ const database_obj = {
     dbName:'MedCare'
 }
 
-function addDoente(doente){
+function addDocumento(collectionName, document, callback){
 	client.connect(database_obj.mongo_url, function(err, db){
 		if(err){
 			console.log("Erro de Conexão");
 		}else{
 			const myDB = db.db(database_obj.dbName);
-			const collection = myDB.collection('doente');
+			const collection = myDB.collection(collectionName);
 
-			collection.insertOne(doente, (err, r) => {
+			collection.insertOne(document, (err, r) => {
+				callback(err);
+			});
+			db.close();
+		}
+	});
+}
+
+function findSomething(collectionName, query){
+	client.connect(database_obj.mongo_url, function(err, db){
+		if(err){
+			console.log("Erro de Conexão");
+		}else{
+			const myDB = db.db(database_obj.dbName);
+			const collection = myDB.collection(collectionName);
+			let DBquery = query;
+			collection.find(DBquery, (err, r) => {
 				if(!err){
-					console.log("Doente adicionado com sucesso");
+					console.log(r);
 				}
 			});
 			db.close();
@@ -22,17 +38,35 @@ function addDoente(doente){
 	});
 }
 
-function addFuncionario(funcionario){
+function updateSomething(collectionName, query, newValues){
 	client.connect(database_obj.mongo_url, function(err, db){
 		if(err){
 			console.log("Erro de Conexão");
 		}else{
 			const myDB = db.db(database_obj.dbName);
-			const collection = myDB.collection('funcionario');
-
-			collection.insertOne(funcionario, (err, r) => {
+			const collection = myDB.collection(collectionName);
+			let queryDB = query; 
+			collection.updateOne(query, newValues, function(err, res){
 				if(!err){
-					console.log("Funcionario adicionado com sucesso");
+					console.log(res);
+				}
+			});
+			db.close();
+		}
+	});
+}
+
+function deleteDocument(collectionName, document, query){
+	client.connect(database_obj.mongo_url, function(){
+		if(err){
+			console.log("Erro de Conexão");
+		}else{
+			const myDB = db.db(database_obj.dbName);
+			const collection = myDB.collection(collectionName);
+			let queryDB = query;
+			collection.deleteOne(query, function(err, obj){
+				if(!err){
+					console.log(obj);
 				}
 			});
 			db.close();
@@ -41,6 +75,7 @@ function addFuncionario(funcionario){
 }
 
 
-
-exports.addFuncionario = addFuncionario;
-exports.addDoente = addDoente;
+exports.deleteDocument = deleteDocument;
+exports.updateSomething = updateSomething;
+exports.findSomething = findSomething;
+exports.addDocumento = addDocumento;
