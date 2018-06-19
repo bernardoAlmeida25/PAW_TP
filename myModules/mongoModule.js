@@ -4,7 +4,7 @@ const database_obj = {
     dbName:'MedCare'
 }
 
-function addDocumento(collectionName, document, callback){
+function addDocument(collectionName, document, callback){
 	client.connect(database_obj.mongo_url, function(err, db){
 		if(err){
 			console.log("Erro de Conexão");
@@ -12,10 +12,10 @@ function addDocumento(collectionName, document, callback){
 			const myDB = db.db(database_obj.dbName);
 			const collection = myDB.collection(collectionName);
 
-			collection.insertOne(document, (err, r) => {
-				callback(err);
+			collection.insertOne(document, function(err, res){
+				if(err) throw err;
+				db.close();
 			});
-			db.close();
 		}
 	});
 }
@@ -29,9 +29,7 @@ function findSomething(collectionName, query){
 			const collection = myDB.collection(collectionName);
 			let DBquery = query;
 			collection.find(DBquery, (err, r) => {
-				if(!err){
-					console.log(r);
-				}
+				if(err) throw err;
 			});
 			db.close();
 		}

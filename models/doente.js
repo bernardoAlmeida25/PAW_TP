@@ -49,7 +49,6 @@ class Doente {
         });
     }
 
-    static updateDoente
 
     static deleteDoenteByNprocesso(nprocesso) {
         mongoModule.deleteDocument('doente', nprocesso);
@@ -57,6 +56,4 @@ class Doente {
 
 }
 
-module.exports = {
-    Doente: Doente
-};
+module.exports = Doente;

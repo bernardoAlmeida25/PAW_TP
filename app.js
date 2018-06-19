@@ -9,8 +9,9 @@ const doenteRoutes = require('../routes/doenteRoutes');
 
 app.use(bodyParser.urlencoded({extended : true}));
 
-app.use('/', doenteRoutes);
-
+app.get('/', (req, res) => {
+	res.end("Sucesso");
+});
 
 app.listen(PORT, () => {
 	console.log('Listening on port ' + PORT);
