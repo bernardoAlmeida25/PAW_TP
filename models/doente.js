@@ -1,13 +1,13 @@
-const mongoModule = require('../myModule/mongoModule');
+const mongoModule = require('/myModules/mongoModule');
 
-class Doente {
+class doente {
     constructor(nome, idade, genero, morada, dataEntrada, nProcesso) {
         this._nome = nome;
         this._idade = idade;
         this._genero = genero;
-        this._morada = morada,
-                this._dataEntrada = dataEntrada;
-        this.nProcesso = nProcesso;
+        this._morada = morada;
+        this._dataEntrada = dataEntrada;
+        this._nProcesso = nProcesso;
     }
 
     get nome() {
@@ -38,7 +38,7 @@ class Doente {
     //MODELO É QUE INTERAJE COM A BD!!
 
     static addDoente(doente, callback) {
-        mongoModule.addDocumento('doente', doente, (err) => {
+        mongoModule.addDocument('doente', doente, (err) => {
             callback(err);
         });
     }
@@ -50,10 +50,12 @@ class Doente {
     }
 
 
-    static deleteDoenteByNprocesso(nprocesso) {
-        mongoModule.deleteDocument('doente', nprocesso);
+    static deleteDoenteByNprocesso(nprocesso, callback) {
+        mongoModule.deleteDocument('doente', nprocesso, (err) =>{
+            callback(err);
+        });
     }
 
 }
 
-module.exports = Doente;
+module.exports = doente;

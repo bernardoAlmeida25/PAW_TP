@@ -10,7 +10,7 @@ const doenteRoutes = require('../routes/doenteRoutes');
 app.use(bodyParser.urlencoded({extended : true}));
 
 app.get('/', (req, res) => {
-	res.end("Sucesso");
+	res.send("Sucesso");
 });
 
 app.listen(PORT, () => {

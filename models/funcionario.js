@@ -1,8 +1,11 @@
-class Funcionario {
-	constructor(nome, password, codigo) {
+const mongoModule = require('../myModules/mongoModule')
+
+class funcionario {
+	constructor(nome, password, codigo, departamento) {
 		this._nome = nome;
 		this._codigo = codigo;
 		this._password = password;
+		this._departamento = departamento;
 	}
 
 	get nome(){
@@ -17,8 +20,27 @@ class Funcionario {
 		return this._password;
 	}
 
-	
-}
-	module.exports = {
-		Funcionario : Funcionario
+	get departamento(){
+		return this._departamento;
 	}
+
+	static addFuncionario(funcionario, callback){
+        mongoModule.addDocument(funcionario, 'funcionario', (err)=>{
+            callback(err);
+        });
+    }
+
+    static checkLogin(callback){
+        mongoModule.findSomething('funcionario', this.codigo, (err, res) =>{
+           callback(err,res);
+        });
+    }
+
+    static getDepartamentoByFuncionario(){
+
+    }
+
+}
+
+
+module.exports = funcionario;
