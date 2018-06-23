@@ -1,0 +1,38 @@
+bottom-bar {
+	display: inline-block;
+	margin:auto;
+	height: 5em;
+	width: 2em;
+}
+
+div {
+	padding: 0px;
+}
+
+#idade {
+	margin-left: 1.67%;
+}
+
+#nome {
+	margin-left: 20%;
+}
+
+#genero {
+	margin-left: 1%;
+}
+
+#nprocesso {
+	margin-left: 1%;
+}
+
+#morada {
+	margin-left: 8%;
+}
+
+#observacoes {
+	margin-left: 1%;
+}
+
+#data {
+	margin-left: 12.05%;
+}
