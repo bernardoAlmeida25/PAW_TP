@@ -37,13 +37,29 @@ class Doente{
 
 
 	//FAZER CRUD AQUI!!!!
-	//MODELO É QUE INTERAJE COM A BD
+	//MODELO É QUE INTERAJE COM A BD!!
 
 	static addDoente(doente, callback){
 		mongoModule.addDocumento('doente', doente, (err) =>{
 			callback(err);
 		});
 	}
+
+	static getDoenteByNprocesso(nprocesso, callback){
+		mongoModule.findSomething('doente', nprocesso, (err) => {
+			callback(err);
+		});
+	}
+
+	static updateDoente
+
+	static deleteDoenteByNprocesso(nprocesso){
+		mongoModule.deleteDocument('doente', nprocesso);
+	}
+
+
+
+
 }
 
 module.exports = {

@@ -56,7 +56,7 @@ function updateSomething(collectionName, query, newValues){
 	});
 }
 
-function deleteDocument(collectionName, document, query){
+function deleteDocument(collectionName, query){
 	client.connect(database_obj.mongo_url, function(){
 		if(err){
 			console.log("Erro de Conexão");
