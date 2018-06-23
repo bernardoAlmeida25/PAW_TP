@@ -36,9 +36,14 @@ class funcionario {
         });
     }
 
-    static getDepartamentoByFuncionario(){
-
-    }
+    static getDepartamentoByFuncionario(codigo, callback){
+        let query = {codigo:{$eq:codigo}};
+        let spec = {_id: 0, departamento: 1};
+        let departemento = mongoModule.findSomethingSpecific('funcionario', query, spec, (err) =>{
+           callback(err);
+        });
+        return departemento;
+	}
 
 }
 

@@ -29,8 +29,26 @@ function findSomething(collectionName, query, callback){
 			let DBquery = query;
 			collection.find(DBquery, (err, r) => {
 				callback(err);
+                db.close();
 			});
-			db.close();
+
+		}
+	});
+}
+
+function findSomethingSpecific(collectionName, query, specification, callback){
+	client.connect(database_obj.mongo_url, function(err, db){
+		if(err){
+			throw err;
+		}else{
+			const dbName = db.db(database_obj.dbName);
+			const collection = dbName.collection(collectionName);
+			let DBquery = query;
+			let spec = specification;
+			collection.find(DBquery, spec, (err, r) => {
+				callback(err);
+				db.close;
+			});
 		}
 	});
 }
