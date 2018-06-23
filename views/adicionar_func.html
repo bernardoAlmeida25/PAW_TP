@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="css/ad_func.css">
+    <link rel="stylesheet" href="bootstrap/bootstrap.css">
+    <meta charset="UTF-8">
+    <title>Adicionar Funcionário</title>
+</head>
+
+<body>
+    <div>
+        <nav class="navbar navbar">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <ul class="nav navbar-nav navbar-brand">
+                        <li>
+                            <a>Welcome to Medcare</a>
+                        </li>
+                    </ul>
+                </div>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#"> 'Nome do User'</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <div align="center">
+        <img src="img/medcare_logo.png" alt="MedCare Logo">
+        <br>
+        <h2>Adicionar Funcionário</h2>
+        <br>
+    </div>
+
+    <form>
+        <div>
+            <div class="col-xs-4" id="nome_func">
+                <label> Nome:</label>
+                <input type="text" class="form-control" name="nome_func" placeholder="Nome do Funcionário">
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div>
+            <div class="col-xs-2" id="cod_func">
+                <label> Codigo:</label>
+                <input type="text" class="form-control" name="cod_func" placeholder="Codigo do Funcionário">
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="col-xs-4" id="password_func">
+            <label> Password:</label>
+            <input type="password" class="form-control" placeholder="Password">
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div>
+            <div class="col-xs-2" id="departamento">
+                <label> Departamento:</label>
+                <select class="form-control">
+                    <option></option>
+                    <option>Triagem</option>
+                    <option>Consultas</option>
+                    <option>Exames</option>
+                    <option>Recepção</option>
+                    <option>Administração</option>
+                </select>
+            </div>
+        </div>
+    </form>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="text-center">
+        <button type="submit" class="btn btn-default">Adicionar</button>
+    </div>
+</body>
+
+</html>
