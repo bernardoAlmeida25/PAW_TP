@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="css/ad_func.css">
     <link rel="stylesheet" href="bootstrap/bootstrap.css">
     <meta charset="UTF-8">
-    <title>Adicionar Funcionário</title>
+    <title>Editar/Remover Funcionário</title>
 </head>
 
 <body>
@@ -30,11 +30,24 @@
     <div align="center">
         <img src="img/medcare_logo.png" alt="MedCare Logo">
         <br>
-        <h2>Adicionar Funcionário</h2>
+        <h2> Editar/Remover Funcionário</h2>
         <br>
     </div>
-
     <form>
+
+        <div>
+            <div class="col-xs-2" id="id_func">
+                <label> Funcionario:</label>
+                <select class="form-control">
+                    <option></option>
+                    <option></option>
+                </select>
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
         <div>
             <div class="col-xs-4" id="nome_func">
                 <label> Nome:</label>
@@ -76,14 +89,20 @@
                 </select>
             </div>
         </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="text-center">
+            <div>
+                <button type="submit" class="btn btn-default">Editar</button>
+                <button type="submit" class="btn btn-default">Remover</button>
+            </div>
+        </div>
     </form>
-    <br>
-    <br>
-    <br>
-    <br>
-    <div class="text-center">
-        <button type="submit" class="btn btn-default"> Adicionar</button>
-    </div>
+
+
 </body>
+
 
 </html>
