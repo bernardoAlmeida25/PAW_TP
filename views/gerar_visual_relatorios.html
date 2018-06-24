@@ -2,13 +2,13 @@
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="css/ad_exame.css">
+    <link rel="stylesheet" href="css/relatorio.css">
     <link rel="stylesheet" href="bootstrap/bootstrap.css">
     <meta charset="UTF-8">
-    <title>Adicionar Exame</title>
+    <title>Gerar/Visualizar Relatórios</title>
 </head>
 
-<body>
+<body class="text-center">
     <div>
         <nav class="navbar navbar">
             <div class="container-fluid">
@@ -16,6 +16,9 @@
                     <ul class="nav navbar-nav navbar-brand">
                         <li>
                             <a>Welcome to Medcare</a>
+                        </li>
+                        <li>
+                            <a href="#">Contacts</a>
                         </li>
                     </ul>
                 </div>
@@ -27,45 +30,34 @@
             </div>
         </nav>
     </div>
-    <div align="center">
+    <div>
         <img src="img/medcare_logo.png" alt="MedCare Logo">
         <br>
-        <h2>Adicionar Exame</h2>
+        <h2>Gerar/ Visualizar Relatórios</h2>
         <br>
     </div>
 
     <form>
         <div>
-            <div>
-                <div class="col-xs-6" id="nome_exame">
-                    <label> Exame:</label>
-                    <input type="text" class="form-control" name="nome_exame" placeholder="Nome do Exame">
-                </div>
-            </div>
-
-            <div class="form-group">
-                <div class="col-xs-6" id="descricao">
-                    <label> Descrição:</label>
-                    <textarea class="form-control" rows="5"></textarea>
-                </div>
+            <div class="col-xs-2" id="id_doente">
+                <label> Doente:</label>
+                <select class="form-control">
+                    <option></option>
+                    <option></option>
+                </select>
             </div>
         </div>
         <br>
         <br>
         <br>
         <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-
-        <div class="text-center">
-            <button type="submit" class="btn btn-default">Adicionar</button>
+        <div>
+            <div class="text-center">
+                <button type="submit" class="btn btn-default"> Gerar/Visualizar Relatórios</button>
+            </div>
         </div>
     </form>
-
 </body>
+
+
+</html>

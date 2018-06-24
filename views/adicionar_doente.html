@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="css/registos.css">
+    <link rel="stylesheet" href="bootstrap/bootstrap.css">
+    <meta charset="UTF-8">
+    <title>Registo_Doente</title>
+</head>
+
+<body>
+    <div>
+        <nav class="navbar navbar">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <ul class="nav navbar-nav navbar-brand">
+                        <li>
+                            <a>Welcome to Medcare</a>
+                        </li>
+                    </ul>
+                </div>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#"> 'Nome do User'</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <div align="center">
+        <img src="img/medcare_logo.png" alt="MedCare Logo">
+        <br>
+        <h2>Registo do Doente </h2>
+        <br>
+    </div>
+    <form>
+        <div>
+            <div class="form-group row">
+                <div class="col-xs-4" id="nome">
+                    <label> Nome:</label>
+                    <input type="text" class="form-control" name="nome" placeholder="Nome do Doente">
+                </div>
+                <div class="col-xs-3" id="idade">
+                    <label> Idade:</label>
+                    <input type="number" class="form-control" name="idade" maxlength="2" placeholder="Idade do Doente">
+                </div>
+            </div>
+            <br>
+            <div class="form-group row">
+                <div class="col-xs-5" id="morada">
+                    <label> Morada:</label>
+                    <input type="text" class="form-control" name="morada" placeholder="Morada do Doente">
+                </div>
+                <div class="col-xs-3" id="nprocesso">
+                    <label> Nº Processo:</label>
+                    <input type="number" class="form-control" name="nprocesso" maxlength="4" placeholder="Nº de Processo">
+                </div>
+                <div class="col-xs-2" id="genero">
+                    <label> Genero:</label>
+                    <select class="form-control">
+                        <option></option>
+                        <option>Masculino</option>
+                        <option>Feminino</option>
+                        <option>Outro</option>
+                    </select>
+                </div>
+            </div>
+            <br>
+            <div class="form-group row">
+                <div class="col-xs-4" id="data">
+                    <label> Data:</label>
+                    <input type="datetime" class="form-control">
+                </div>
+                <div class="col-xs-5" id="observacoes">
+                    <label> Observações:</label>
+                    <textarea class="form-control" rows="5"></textarea>
+                </div>
+            </div>
+            <div class="text-center">
+                <button type="submit" class="btn btn-default"> Adicionar</button>
+            </div>
+        </div>
+    </form>
+
+</body>
+
+</html>
