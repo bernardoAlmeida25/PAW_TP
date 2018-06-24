@@ -4,14 +4,20 @@ var expressSanitizer = require('express-sanitizer');
 const app = express();
 app.use(bodyParser.urlencoded({extended : true}));
 app.use(expressSanitizer());
+const session = require('express-session');
+
+app.use(session({
+    secret: 'keyboard cat',
+    resave: false,
+    saveUninitialized: true
+}));
+
 const PORT = 3000;
 
 
-//const doenteRoutes = require('routes/doenteRoutes');
-//const funcionarioModel = require('models/funcionario');
 
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/views/index.html');
+    res.sendFile(__dirname + '/views/pagina_inicial.html');
 });
 
 app.listen(PORT, () => {
