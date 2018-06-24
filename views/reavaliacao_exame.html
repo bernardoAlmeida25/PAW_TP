@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="css/ad_exame.css">
+    <link rel="stylesheet" href="bootstrap/bootstrap.css">
+    <meta charset="UTF-8">
+    <title> Reavaliação pós-exame</title>
+</head>
+
+<body class="text-center">
+    <div>
+        <nav class="navbar navbar">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <ul class="nav navbar-nav navbar-brand">
+                        <li>
+                            <a>Welcome to Medcare</a>
+                        </li>
+                        <li>
+                            <a href="#">Contacts</a>
+                        </li>
+                    </ul>
+                </div>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#"> 'Nome do User'</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <div>
+        <img src="img/medcare_logo.png" alt="MedCare Logo">
+        <br>
+        <h2>Gerar/ Reavaliação pós-exame</h2>
+        <br>
+    </div>
+
+    <form>
+        <div class="form-group row">
+            <div class="col-xs-4" id="nome_doente">
+                <label> Nome:</label>
+                <input type="text" class="form-control" name="nome_doente" placeholder="Nome do Doente">
+            </div>
+            <div class="col-xs-2" id="nprocesso">
+                <label> Nº Processo:</label>
+                <input type="number" class="form-control" name="nprocesso" maxlength="4" placeholder="Nº de Processo">
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-xs-2" id="estado">
+                <label> Estado:</label>
+                <select class="form-control">
+                    <option></option>
+                    <option style="color: green">Verde</option>
+                    <option style="color: gold">Amarelo</option>
+                    <option style="color: red">Vermelho</option>
+                </select>
+            </div>
+            <div class="col-xs-5" id="observacoes_dep_exames">
+                <label> Observações do Departamento de Exames:</label>
+                <textarea class="form-control" rows="5"></textarea>
+            </div>
+        </div>
+        <div>
+            <div class="text-center">
+                <button type="submit" class="btn btn-default"> Confirmar</button>
+            </div>
+        </div>
+    </form>
+</body>
+
+</html>

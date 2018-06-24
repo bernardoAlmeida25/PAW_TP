@@ -2,10 +2,10 @@
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="css/relatorio.css">
     <link rel="stylesheet" href="bootstrap/bootstrap.css">
     <meta charset="UTF-8">
-    <title>MedCare</title>
+    <title>Gerar/Visualizar Relatórios</title>
 </head>
 
 <body class="text-center">
@@ -32,21 +32,32 @@
     </div>
     <div>
         <img src="img/medcare_logo.png" alt="MedCare Logo">
-    </div>
-    <div class="background">
-        <div class="vertical-menu">
-            <a href="#" class="active">Funções</a>
-            <a href="adicionar_exame.html">Adicionar Exame</a>
-            <a href="adicionar_doente.html">Adicionar Doente</a>
-            <a href="adicionar_func.html">Adicionar Funcionário</a>
-            <a href="gerar_visual_relatorios.html">Gerar/Visualizar relatórios</a>
-            <a href="edi_rem_func.html">Editar/Remover Funcionário</a>
-          </div> 
         <br>
+        <h2>Gerar/ Visualizar Relatórios</h2>
         <br>
     </div>
 
-
+    <form>
+        <div>
+            <div class="col-xs-2" id="id_doente">
+                <label> Doente:</label>
+                <select class="form-control">
+                    <option></option>
+                    <option></option>
+                </select>
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div>
+            <div class="text-center">
+                <button type="submit" class="btn btn-default"> Gerar/Visualizar Relatórios</button>
+            </div>
+        </div>
+    </form>
 </body>
+
 
 </html>

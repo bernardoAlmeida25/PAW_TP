@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="css/registos.css">
     <link rel="stylesheet" href="bootstrap/bootstrap.css">
     <meta charset="UTF-8">
-    <title>Registo_Doente</title>
+    <title>Triagem</title>
 </head>
 
 <body>
@@ -30,32 +30,22 @@
     <div align="center">
         <img src="img/medcare_logo.png" alt="MedCare Logo">
         <br>
-        <h2>Registo do Doente </h2>
+        <h2> Triagem</h2>
         <br>
     </div>
+
     <form>
         <div>
             <div class="form-group row">
-                <div class="col-xs-4" id="nome">
+                <div class="col-xs-4" id="nome_doente_tri">
                     <label> Nome:</label>
                     <input type="text" class="form-control" name="nome" placeholder="Nome do Doente">
                 </div>
-                <div class="col-xs-3" id="idade">
+                <div class="col-xs-2" id="idade_doente_tri">
                     <label> Idade:</label>
                     <input type="number" class="form-control" name="idade" maxlength="2" placeholder="Idade do Doente">
                 </div>
-            </div>
-            <br>
-            <div class="form-group row">
-                <div class="col-xs-5" id="morada">
-                    <label> Morada:</label>
-                    <input type="text" class="form-control" name="morada" placeholder="Morada do Doente">
-                </div>
-                <div class="col-xs-3" id="nprocesso">
-                    <label> Nº Processo:</label>
-                    <input type="number" class="form-control" name="nprocesso" maxlength="4" placeholder="Nº de Processo">
-                </div>
-                <div class="col-xs-2" id="genero">
+                <div class="col-xs-2" id="genero_tri">
                     <label> Genero:</label>
                     <select class="form-control">
                         <option></option>
@@ -64,24 +54,42 @@
                         <option>Outro</option>
                     </select>
                 </div>
-            </div>
-            <br>
-            <div class="form-group row">
-                <div class="col-xs-4" id="data">
-                    <label> Data:</label>
-                    <input type="datetime" class="form-control">
+                <div class="col-xs-2" id="nprocesso">
+                    <label> Nº Processo:</label>
+                    <input type="number" class="form-control" name="nprocesso" maxlength="4" placeholder="Nº de Processo">
                 </div>
-                <div class="col-xs-5" id="observacoes">
-                    <label> Observações:</label>
+            </div>
+            <div>
+                <div class="col-xs-5" id="observacoes_tri">
+                    <label> Observações da Recepção:</label>
                     <textarea class="form-control" rows="5"></textarea>
                 </div>
+                <div class="col-xs-2" id="estado_tri">
+                    <label> Estado:</label>
+                    <select class="form-control">
+                        <option></option>
+                        <option>Indeterminado</option>
+                        <option style="color: green">Verde</option>
+                        <option style="color: gold">Amarelo</option>
+                        <option style="color: red">Vermelho</option>
+                    </select>
+                </div>
             </div>
-            <div class="text-center">
-                <button type="submit" class="btn btn-default"> Adicionar</button>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-default"> Gravar</button>
+                </div>
             </div>
-        </div>
     </form>
-
 </body>
 
 </html>
