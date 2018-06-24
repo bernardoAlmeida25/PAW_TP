@@ -11,7 +11,7 @@ const PORT = 3000;
 //const funcionarioModel = require('models/funcionario');
 
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/views/index.html');
+    res.sendFile(__dirname + '/views/pagina_index.html');
 });
 
 app.listen(PORT, () => {
