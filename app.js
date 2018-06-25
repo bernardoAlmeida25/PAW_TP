@@ -12,6 +12,10 @@ const routes = require('./routes/funcionarioRoutes');
 
 
 app.use(express.static(path.join(__dirname, 'public')));
+app.set('view engine', 'jade');
+app.engine('html', require('ejs').renderFile);
+app.set('view engine', 'html');
+
 app.use(session({
     secret: 'keyboard cat',
     resave: false,
@@ -36,14 +40,8 @@ MongoClient.connect(url,  { useNewUrlParser: true },function(err, db) {
 });
 
 
-
-
-
-
-
-
-
 app.use('/', routes);
+
 const PORT = 3000;
 
 app.get('/', (req, res) => {

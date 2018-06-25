@@ -33,7 +33,7 @@
         <h2>Registo do Doente </h2>
         <br>
     </div>
-    <form method="post" action="adicionar_doente.html">
+    <form method="post" action="/adicionar_doente">
         <div>
             <div class="form-group row">
                 <div class="col-xs-4" id="nome">
@@ -57,7 +57,7 @@
                 </div>
                 <div class="col-xs-2" id="genero">
                     <label> Genero:</label>
-                    <select class="form-control">
+                    <select class="form-control" name="genero">
                         <option></option>
                         <option>Masculino</option>
                         <option>Feminino</option>
@@ -69,7 +69,7 @@
             <div class="form-group row">
                 <div class="col-xs-4" id="data">
                     <label> Data:</label>
-                    <input type="datetime" class="form-control">
+                    <input type="date" class="form-control" name="dataEntrada">
                 </div>
                 <div class="col-xs-5" id="observacoes">
                     <label> Observações:</label>

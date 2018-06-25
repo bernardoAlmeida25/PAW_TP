@@ -18,21 +18,35 @@ function adicionarFuncionario(req, callback) {
 }
 
 function getFuncByCodigo(req, callback) {
-    let codigo = req.body.user_id;
+    let codigo = req.sanitize(req.body.codigo);
     funcionarioModel.getFuncByCod(codigo, (err)=>{
        callback(err);
     });
 }
 
-function getDepartamentoByuser(codigo){
-    return funcionarioModel.getDepartamentoByFuncionario(codigo);
+function getDepartamentoByUser(req, callback){
+    let codigoSan = req.sanitize(req.body.codigo);
+    if(codigoSan){
+        funcionarioModel.getDepartamentoByFuncionario(codigoSan, (err) =>{
+            callback(err);
+        });
+    }else{
+        callback(false);
+    }
+
 }
 
-function checkData(req){
-    return funcionarioModel.checkData(req);
+function checkData(req, callback){
+    let codigoSan = req.body.codigo;
+    let passwordSan = req.body.password;
+    if(codigoSan && passwordSan){
+        funcionarioModel.checkData(passwordSan, codigoSan, (err) =>{
+            callback(err);
+        });
+    }
 }
 
 exports.adicionarFuncionario = adicionarFuncionario;
-exports.getDepartamentoByuser = getDepartamentoByuser;
+exports.getDepartamentoByUser = getDepartamentoByUser;
 exports.checkData = checkData;
 exports.getFuncByCodigo = getFuncByCodigo;

@@ -11,8 +11,10 @@ function addDocument(collectionName, document){
 		}else{
 			const dbName = db.db(database_obj.dbName);
 			const collection = dbName.collection(collectionName);
-			collection.insertOne(document);
-            db.close();
+			collection.insertOne(document, function (err, res) {
+				if(err) throw err;
+                db.close();
+            });
 		}
 	});
 }
@@ -27,7 +29,7 @@ function findSomething(collectionName, query){
 			let DBquery = query;
 			collection.find(DBquery, function (err) {
 				if(err) throw err;
-                db.close();
+				db.close();
             });
 		}
 	});
@@ -40,10 +42,9 @@ function findSomethingSpecific(collectionName, query, specification){
 		}else{
 			const dbName = db.db(database_obj.dbName);
 			const collection = dbName.collection(collectionName);
-			let DBquery = query;
-			let spec = specification;
-			collection.find(DBquery, spec, function (err) {
+			collection.findOne(query, specification, function (err, res) {
 				if(err) throw err;
+				console.log(res);
                 db.close;
             });
 		}
