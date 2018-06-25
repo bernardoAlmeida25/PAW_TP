@@ -1,4 +1,4 @@
-const mongoModule = require('/myModules/mongoModule');
+const mongoModule = require('../myModules/mongoModule');
 
 class doente {
     constructor(nome, idade, genero, morada, dataEntrada, nProcesso) {

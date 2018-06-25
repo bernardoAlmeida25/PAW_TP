@@ -17,9 +17,22 @@ function adicionarFuncionario(req, callback) {
     }
 }
 
-function getDepartamentoByuser(req, callback){
-    return funcionarioModel.getDepartamentoByFuncionario()
+function getFuncByCodigo(req, callback) {
+    let codigo = req.body.user_id;
+    funcionarioModel.getFuncByCod(codigo, (err)=>{
+       callback(err);
+    });
 }
 
+function getDepartamentoByuser(codigo){
+    return funcionarioModel.getDepartamentoByFuncionario(codigo);
+}
+
+function checkData(req){
+    return funcionarioModel.checkData(req);
+}
 
 exports.adicionarFuncionario = adicionarFuncionario;
+exports.getDepartamentoByuser = getDepartamentoByuser;
+exports.checkData = checkData;
+exports.getFuncByCodigo = getFuncByCodigo;

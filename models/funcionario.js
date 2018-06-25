@@ -30,19 +30,32 @@ class funcionario {
         });
     }
 
+    static getFuncByCod(codigo, callback){
+		let query = {codigo:{$eq: codigo}};
+		mongoModule.findSomething('funcionario', query, (err) =>{
+			callback(err);
+		});
+	}
+
     static checkLogin(callback){
         mongoModule.findSomething('funcionario', this.codigo, (err, res) =>{
            callback(err,res);
         });
     }
 
-    static getDepartamentoByFuncionario(codigo, callback){
+    static getDepartamentoByFuncionario(codigo){
         let query = {codigo:{$eq:codigo}};
         let spec = {_id: 0, departamento: 1};
-        let departemento = mongoModule.findSomethingSpecific('funcionario', query, spec, (err) =>{
-           callback(err);
-        });
-        return departemento;
+        mongoModule.findSomethingSpecific('funcionario', query, spec);
+	}
+
+	static checkData(req){
+        let password = req.body.password;
+        let query = {codigo: {$eq: req.body.user_id}};
+        let passwordBD = mongo.findSomethingSpecific('funcionario', query, {_id:0 , password: 1});
+        if(password == passwordBD){
+        	return true;
+		}
 	}
 
 }

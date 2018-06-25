@@ -1,5 +1,5 @@
 const { check, validationResult } = require('express-validator/check');
-const doente = require('models/doente');
+const doente = require('../models/doente');
 
 function adicionarDoente(req, callback){
     let nomeSan = req.sanitize(req.body.nome);
