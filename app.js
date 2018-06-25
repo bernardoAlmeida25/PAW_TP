@@ -1,3 +1,4 @@
+const path = require('path');
 const express = require('express');
 const bodyParser = require('body-parser');
 var expressSanitizer = require('express-sanitizer');
@@ -9,6 +10,8 @@ const routes = require('./routes/funcionarioRoutes');
 
 
 
+
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(session({
     secret: 'keyboard cat',
     resave: false,
@@ -43,11 +46,11 @@ MongoClient.connect(url,  { useNewUrlParser: true },function(err, db) {
 app.use('/', routes);
 const PORT = 3000;
 
-
-
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/views/pagina_inicial.html');
 });
+
+
 
 app.listen(PORT, () => {
 	console.log('Listening on port ' + PORT);
